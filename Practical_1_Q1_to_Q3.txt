@@ -1,0 +1,134 @@
+30391377 JP Radebe
+
+################################################# 1 #########################################
+create database BidvestBank;
+use BidvestBank;
+
+################################################# 2 #########################################
+create table BankBranch(
+	branch_Number char(20) not null primary key,
+	branch_Name char(50),
+	assets char(50)
+);
+
+create table Customer(
+	customer_Name char(50) not null primary key,
+	customer_Street char(50),
+	customer_City char(50)
+);
+
+create table CustomerAccount(
+	account_Number char(15) not null primary key,
+	branch_Name char(50), 
+	balance decimal(18,2)
+);
+
+create table Loan(
+	loan_Number char(10) not null primary key,
+	branch_Name char(50),
+	amount decimal(18,2)
+);
+
+create table Depositor(
+	customer_Name char(50) not null primary key, 
+	account_Number char(15)
+);
+
+create table Borrower(
+	customer_Name char(50) not null primary key,
+	loan_Number char(10)
+);
+
+create table Employee(
+	employee_Name char(50) not null primary key,
+	branch_Name char(50),
+	salary decimal(18,0)
+);
+
+################################################# 3 #########################################
+
+insert into CustomerAccount values('A-5324','Newtown',500);
+insert into CustomerAccount values('A-5624','Sunnyside',400);
+insert into CustomerAccount values('A-7794','Midrand',900);
+insert into CustomerAccount values('A-4467','Mabopane',700);
+insert into CustomerAccount values('A-3546','Midrand',750);
+insert into CustomerAccount values('A-3453','Universitas',700);
+insert into CustomerAccount values('A-2542','Mamelodi',350);
+
+insert into BankBranch values('Midrand', 'Johannesburg', 7100000);
+insert into BankBranch values('Newtown', 'Johannesburg', 9000000);
+insert into BankBranch values('Mabopane', 'Pretoria', 400000);
+insert into BankBranch values('Belgravia', 'Kimberly', 3700000);
+insert into BankBranch values('Sunnyside', 'Pretoria', 1700000);
+insert into BankBranch values('Amanzimtoto', 'Durban', 300000);
+insert into BankBranch values('Universitas', 'Bloemfontein', 2100000);
+insert into BankBranch values('Mamelodi', 'Pretoria', 8000000);
+
+insert into customer values('Modise', 'Spring', 'George');
+insert into customer values('Brooks', 'Senator', 'Johannesburg');
+insert into customer values('Jooste', 'North', 'Kimberly');
+insert into customer values('Lombard', 'Sand Hill', 'Nelspruit');
+insert into customer values('Mokwena', 'Walnut', 'Port-Elizabeth');
+insert into customer values('Johnson', 'Mmabatho', 'Mafikeng');
+alter table Customer drop primary key;
+insert into customer values('Johnson', 'Alma', 'Bloemfontein');
+insert into customer values('Zwane', 'Main', 'Mafikeng');
+insert into customer values('Lindsay', 'Park', 'George');
+insert into customer values('Smith', 'North', 'Kimberly');
+insert into customer values('Dlamini', 'Putnam', 'Port-Elizabeth');
+insert into customer values('Williams', 'Nassau', 'Giyane');
+
+insert into Depositor values('Johnson','A-5624');
+alter table Depositer drop primary key;
+insert into Depositor values('Johnson','A-5624');
+insert into Depositor values('Johnson','A-7794');
+insert into Depositor values('Zwane','A-3546');
+insert into Depositor values('Lindsay','A-3453');
+insert into Depositor values('Smith','A-4467');
+insert into Depositor values('Johnson','A-2542');
+
+insert into Loan values('L-11','Mamelodi',900);
+insert into Loan values('L-14','Newtown',1500);
+insert into Loan values('L-15','Sunnyside',1500);
+insert into Loan values('L-16','Sunnyside',1300);
+insert into Loan values('L-17','Newtown',1000);
+insert into Loan values('L-23','Universitas',2000);
+insert into Loan values('L-93','Mabopane',500);
+
+insert into Borrower values('Modise','L-16');
+insert into Borrower values('Jooste','L-93');
+insert into Borrower values('Johnson','L-15');
+insert into Borrower values('Jackson','L-14');
+insert into Borrower values('Zwane','L-17');
+insert into Borrower values('Smith','L-11');
+insert into Borrower values('Smith','L-23');
+alter table Borrower drop primary key;
+insert into Borrower values('Williams','L-17');
+
+insert into Employee values('Modise','Sunnyside',1500);
+insert into Employee values('Brown','Sunnyside',1300);
+insert into Employee values('Gopal','Sunnyside',5300);
+insert into Employee values('Johnson','Newtown',1500);
+insert into Employee values('Loreena','Newtown',1300);
+insert into Employee values('Peterson','Newtown',2500);
+insert into Employee values('Rao','Austin',1500);
+insert into Employee values('Sato','Austin',1600);
+
+############################################################
+################### Question 4 and 5 #######################
+########################## in ##############################
+########################## PDF #############################
+############################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
